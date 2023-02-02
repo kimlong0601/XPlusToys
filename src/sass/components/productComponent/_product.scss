@@ -1,0 +1,86 @@
+.productDetail{
+    padding: 100px 0;
+    width: 100%;
+    height: 100%;
+    @include mobile{
+        padding: 40px 0;
+    }
+    .productDetail-container{
+        margin: 20px 0;
+        @include flex(flex-start,flex-start);
+        width: 100%;
+        height: 100%;
+        @include tablet{
+            flex-direction: column;
+        }
+        &__image{
+            width: 50%;
+            height: 700px;
+            @include tablet{
+                width: 100%;
+                height: 800px;
+            }
+            @include mobile{
+                width: 100%;
+                height: 500px;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+            }
+        }
+        &__content{
+            width: 50%;
+            color: $text-color;
+            @include tablet{
+                width: 100%;
+            }
+            &__name{
+                margin-top: 40px;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                font-family: $title-font;
+            }
+            &__description{
+                margin-bottom: 20px;
+            }
+            &__price{
+                margin-bottom: 20px;
+                font-size: $title-font-size;
+                font-weight: $font-bold;
+            }
+            &__quantity{
+                margin: 30px 0;
+                &__title{
+                    margin: 10px 0;
+                }
+                &__info{
+                    @include flex(flex-start, flex-start);
+                    .quantity__btn{
+                        @include flex(center,center);
+                        width: 30px;
+                        height: 30px;
+                        font-size: 1.5rem;
+                        cursor: pointer;
+                        border: 1px solid $text-color;
+                    }
+                    .quantity__input{
+                        @include flex(center, center);
+                        height: 30px;
+                        width: 90px;
+                        font-size: 1.5rem;
+                        border-top: 1px solid $text-color;
+                        border-bottom: 1px solid $text-color;
+                    }
+                }
+            }
+            &__note{
+                margin-bottom: 20px;
+            }
+            button{
+                width: 100%;
+            }
+        }
+    }
+}

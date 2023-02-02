@@ -1,0 +1,88 @@
+.timeline{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 80px;
+    overflow: hidden;
+
+
+    
+    .timeline-container{
+        width: 100%;
+        height: 100%;
+        padding: 30px 0;
+        .TimlineBtn{
+            position: absolute;
+            top: 35%;
+            right: 0;
+            z-index: 2;
+            .PrevButton, .NextButton{
+                @include flex(center,center);
+                width: 60px;
+                height: 60px;
+                background-color: $bg-color;
+                color: $text-color;
+                border: 1px solid rgb(160, 159, 159);
+                font-size: 1.6rem;
+                overflow: hidden;
+            }
+            .PrevButton:hover, .NextButton:hover{
+                cursor: pointer;
+            }
+            .PrevButton:hover{
+                i{
+                    animation-name: PrevAnimation;
+                    animation-duration: 1s;
+                    animation-iteration-count: infinite;
+                }
+            }
+            .NextButton:hover{
+                i{
+                    animation-name: PrevAnimation;
+                    animation-duration: 1s;
+                    animation-iteration-count: infinite;
+                }
+            }
+        }
+        .timeline-box{
+            @include flex(center,center);
+            height: 480px;
+
+            &__icon{
+                width: 450px;
+                height: 100%;
+                @include mobile{
+                    display: none;
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            &__content{
+                background-color: $text-color;
+                width: 450px;
+                height: 100%;
+                padding: 0 45px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                color: $text-white;
+                @include mobile{
+                    width: 100%;
+                    padding: 30px;
+                }
+                h1{
+                    text-transform: uppercase;
+                    font-family: $title-font;
+                    font-weight: $font-black;
+                    font-size: $header-logo-font;
+                    margin-bottom: 5px;
+                }
+                p{
+                    margin: 12px 0;
+                }
+            }
+        }
+    }
+}

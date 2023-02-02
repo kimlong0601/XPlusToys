@@ -1,0 +1,111 @@
+.footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-color: $footer-bg;
+    margin-top: -40px;
+    .container{
+        height: 100%;
+    }
+    .footer-container{
+        @include flex(center,center);
+        flex-direction: column;
+        padding: 50px 0;
+        color: $text-white;
+        .footer-top{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            @include tablet{
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @include mobile{
+                grid-template-columns: 1fr;
+            }
+
+
+            &__box{
+                width: 70%;
+                @include tablet{
+                    margin-bottom: 50px;
+                }
+                &__title{
+                    margin-bottom: 10px;
+                    font-size: $title-font-size;
+                    text-transform: uppercase;
+                }
+                &__details{
+                    margin: 15px 0;
+                }
+                &__icons{
+                    @include flex(center,center);
+                    height: 60px;
+                    width: 60px;
+                    border: 1px solid $text-white;
+                    font-size: 1.5rem;
+                    position: relative;
+                    overflow: hidden;
+                    transition: 0.4s;
+                    color: $text-white;
+                }
+                &__icons:hover{
+                    i{
+                        color: $footer-bg;
+                        transition: 0.4s;
+                        z-index: 2;
+                    }
+                }
+                &__icons::before{
+                    content: '';
+                    position: absolute;
+                    bottom: -100%;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $bg-color;
+                    transition: 0.4s;
+                }
+                &__icons:hover::before{
+                    bottom: 0;
+                    transition: 0.4s;
+                }
+
+
+                .footer-menu{
+                    li{
+                        margin: 15px 0;
+                        a{
+                            color: $text-white;
+                            position: relative;
+                        }
+                        a::before{
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 1px;
+                            background-color: $bg-color;
+                            opacity: 0.5;
+                        }
+                        a:hover::before{
+                            opacity: 1;
+                        }
+
+                        .line{
+                            height: 30px;
+                            width: 2px;
+                            background-color: $bg-color;
+                        }
+                    }
+                    .policy{
+                        a{
+                            margin-right: 5px;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

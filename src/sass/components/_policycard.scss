@@ -1,0 +1,38 @@
+.policyCard{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    @include tablet{
+        grid-template-columns: repeat(2,1fr);
+    }
+    @include mobile{
+        grid-template-columns: 1fr;
+        margin: 0;
+    }
+
+    .policyCard-container{
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        margin-top: 60px;
+        padding: 15px 0;
+
+        .policycard-box{
+            @include flex(center,center);
+            flex-direction: column;
+            text-align: center;
+            padding: 20px 0;
+            color: $text-color;
+            i{
+                font-size: 3rem;
+            }
+            &__info{
+                margin: 8px 0;
+                &__name{
+                    text-transform: uppercase;
+                    margin: 10px 0;
+                }
+            }
+        }
+    }
+}

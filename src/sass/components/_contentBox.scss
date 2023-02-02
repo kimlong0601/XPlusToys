@@ -1,0 +1,30 @@
+.content{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 50px;
+    .content-container{
+        @include flex(center,center);
+        flex-direction: column;
+        color: $text-color;
+
+        .content-box{
+            @include flex(center,center);
+            flex-direction: column;
+            text-align: center;
+            &__heading__small{
+                font-size: $small-font-size;
+            }
+            &__heading__large{
+                font-size: $biggest-font-size;
+                margin: 15px 0;
+                font-family: $title-font;
+            }
+            p{
+                width: 60%;
+                margin: 10px 0;
+            }
+        }
+    }
+}

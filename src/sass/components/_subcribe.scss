@@ -1,0 +1,104 @@
+.subcribe{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-top: 80px;
+    @include mobile{
+        height: 400px;
+    }
+    .subcribeImg{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+    }
+
+    .subcribe-container{
+        position: absolute;
+        top: 25%;
+        right: 5%;
+        @include mobile{
+            top: 10%;
+            right: 10%;
+            left: 10%;
+            bottom: 10%;
+        }
+        .subcribe-box{
+            width: 480px;
+            height: auto;
+            padding: 30px 40px;
+            background-color: $bg-color;
+            color: $text-color;
+
+            @include mobile{
+                width: 100%;
+                padding: 20px;
+            }
+            h2{
+                font-size: $title-font-size;
+                font-weight: $font-bold;
+                font-family: $title-font;
+            }
+            p{
+                @include mobile{
+                    width: 100%;
+                }
+                width: 300px;
+                margin: 10px 0;
+                letter-spacing: 0.8px;
+            }
+            form{
+                position: relative;
+                margin-top: 20px;
+                input{
+                    width: 200px;
+                    height: 52px;
+                    padding: 10px;
+                    margin-right: 8px;
+                    border: 1px solid gray;
+                    outline: none;
+                    
+                    @include mobile{
+                        width: 100%;
+                    }
+                }
+                input:focus{
+                    border: 1px solid $text-color;
+                }
+                input:focus ~ span{
+                    transform: translateX(10px) translateY(-10px);
+                    padding: 0 10px;
+                    top: 20%;
+                    font-size: 14px;
+                    background: $bg-color;
+                    
+                    @include mobile{
+                        top: 0;
+                    }
+                }
+                span{
+                    position: absolute;
+                    left: 0;
+                    top: 20%;
+                    padding: 10px;
+                    pointer-events: none;
+                    font-size: 1rem;
+                    transition: 0.5s;
+                    font-family: $title-font;
+                    @include mobile{
+                        top: 0;
+                    }
+                }
+                button{
+                    @include mobile{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

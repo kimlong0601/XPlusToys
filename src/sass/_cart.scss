@@ -1,0 +1,170 @@
+.cart{
+    padding-top: $header-height;
+    padding-bottom: $header-height;
+    width: 100%;
+    height: auto;
+    @include tablet{
+        padding-top: $header-tablet-height;
+        padding-bottom: $header-tablet-height;
+    }
+    @include mobile{
+        padding-top: $header-mobile-height;
+        padding-bottom: $header-mobile-height;
+    }
+    &-title{
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $title-font;
+        color: $text-color;
+        margin-bottom: 30px;
+    }
+    &-container{
+        @include flex(flex-start,flex-start);
+
+        @include tablet{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        &__content{
+            width: 60%;
+
+            @include tablet{
+                width: 100%;
+            }
+
+           &__info{
+                @include flex(center,flex-start);
+                margin: 20px 0;
+                color: $text-color;
+                text-align: center;
+                @include mobile{
+                    flex-direction: column;
+                    gap: 10px 0;
+                }
+               
+
+                &__image{
+                    margin-right: 25px;
+                    @include mobile{
+                        margin: 0;
+                        width: 100%;
+                    }
+                    img{
+                        height: 150px;
+                    }
+                }
+                &__title{
+                    width: 25%;
+                    margin-right: 35px;
+                    @include mobile{
+                        margin: 0;
+                        width: 100%;
+                    }
+                }
+                &__price{
+                    margin-right: 35px;
+                    @include mobile{
+                        margin: 0;
+                        width: 100%;
+                    }
+                }
+                &__quantity{
+                    @include flex(flex-start,flex-start);
+                    margin-right: 35px;
+                    @include mobile{
+                        margin: 0;
+                    }
+                    .quantity__btn{
+                        @include flex(center,center);
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid $text-color;
+                    }
+                    .quantity__btn:hover{
+                        cursor: pointer;
+                    }
+                    .quantity__input{
+                        @include flex(center,center);
+                        width: 50px;
+                        height: 30px;
+                        border-top: 1px solid $text-color;
+                        border-bottom: 1px solid $text-color;
+                    }
+                }
+                &__remove{
+                    font-size: 1.5rem;
+                    i:hover{
+                        cursor: pointer;
+                    }
+                }
+           }
+        }
+        .cart-line{
+            width: 100%;
+            height: 1px;
+            background-color: $text-color;
+            margin-bottom: 10px;
+            display: none;
+            @include tablet{
+                display: block;
+            }
+        }
+        &__box{
+            width: 40%;
+            flex-direction: column;
+
+            @include tablet{
+                width: 100%;
+            }
+
+            .cart-box__total{
+                background-color: #f5f5f5;
+                height: auto;
+                padding: 20px 30px;
+                color: $text-color;
+
+                @include tablet{
+                    padding: 10px 15px;
+                }
+                &__title{
+                    width: 100%;
+                    text-align: center;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                }
+                &__info{
+                    margin-bottom: 15px;
+                    @include flex(center,space-between);
+                    span{
+                        font-weight: $font-bold;
+                    }
+                }
+                .line{
+                    width: 100%;
+                    height: 1px;
+                    background-color: $text-color;
+                    margin-bottom: 10px;
+                }
+                .btn-primary-dm{
+                    width: 100%;
+                }
+            }
+            .cart-box__payment{
+                margin: 15px;
+                color: $text-color;
+                &__title{
+                    width: 100%;
+                    text-align: center;
+                }
+                &__icon{
+                    margin-top: 10px;
+                    @include flex(center,space-between);
+                }
+            }
+        }
+        
+    }
+}
